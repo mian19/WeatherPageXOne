@@ -9,38 +9,19 @@ import Foundation
 
 struct JSONResponse: Codable {
     let city, temperature, description: String
-    let weatherPerDay: [WeatherPerDay]
+    let weather_per_day: [WeatherPerDay]
     let forecast: [Forecast]
-
-    enum CodingKeys: String, CodingKey {
-        case city, temperature, description
-        case weatherPerDay = "weather_per_day"
-        case forecast
-    }
 }
 
 // MARK: - Forecast
 struct Forecast: Codable {
     let date: String
-    let minTemperature, maxTemperature: Int
-    let weatherType: String
-
-    enum CodingKeys: String, CodingKey {
-        case date
-        case minTemperature = "min_temperature"
-        case maxTemperature = "max_temperature"
-        case weatherType = "weather_type"
-    }
+    let min_temperature, max_temperature: Int
+    let weather_type: String
 }
 
 // MARK: - WeatherPerDay
 struct WeatherPerDay: Codable {
-    let timestamp, weatherType, temperature: String
+    let timestamp, weather_type, temperature: String
     let sunset: Bool?
-
-    enum CodingKeys: String, CodingKey {
-        case timestamp
-        case weatherType = "weather_type"
-        case temperature, sunset
-    }
 }

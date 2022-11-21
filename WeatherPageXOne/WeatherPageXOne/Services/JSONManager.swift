@@ -8,6 +8,10 @@
 import Foundation
 
 class JSONManager {
+    
+    static var shared = JSONManager()
+    private init() {}
+    
     func fetchingInformation(for resource: String) -> JSONResponse? {
         guard let path = Bundle.main.path(forResource: resource, ofType: "json") else { return nil}
         let url = URL(fileURLWithPath: path)
