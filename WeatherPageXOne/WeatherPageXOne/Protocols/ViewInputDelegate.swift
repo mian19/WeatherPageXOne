@@ -8,7 +8,6 @@
 import Foundation
 
 protocol ViewInputDelegate: AnyObject {
-    func setupInitialState()
     func setupData(testData: JSONResponse)
     func displayData()
 }

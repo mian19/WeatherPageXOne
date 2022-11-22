@@ -23,12 +23,8 @@ final class Presenter {
     }
 }
 
-
 extension Presenter: ViewOutputDelegate {
     func getData() {
         self.loadData()
     }
-
-    
-    
 }
