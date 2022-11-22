@@ -9,12 +9,13 @@
 import UIKit
 
 extension UILabel {
-    static func customLabel(text: String = "", fontSize: CGFloat, alpha: Double = 1, characterSpacing: CGFloat = 0) -> UILabel {
+    static func customLabel(text: String = "", fontSize: CGFloat, alpha: Double = 1, textAlignment: NSTextAlignment = .left, characterSpacing: CGFloat = 0) -> UILabel {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: fontSize, weight: .medium)
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: alpha)
-        label.textAlignment = .left
+        label.textAlignment = textAlignment
         label.text = text
         return label
     }
