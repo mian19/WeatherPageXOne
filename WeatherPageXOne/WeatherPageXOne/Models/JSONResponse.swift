@@ -9,7 +9,7 @@ import Foundation
 
 struct JSONResponse: Codable {
     let city, temperature, description: String
-    let weather_per_day: [WeatherPerDay]
+    var weather_per_day: [WeatherPerDay]
     let forecast: [Forecast]
 }
 
